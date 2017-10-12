@@ -1,0 +1,5 @@
+com\tcs\main\Service\CustomerAssetService.class
+com\tcs\main\SpringBootDemo.class
+com\tcs\main\Domain\CustomerAssetBean.class
+com\tcs\main\Repository\CustomerAssetRepository.class
+com\tcs\main\Controller\CustomerAssetController.class

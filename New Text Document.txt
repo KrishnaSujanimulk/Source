@@ -1,0 +1,198 @@
+{"CustId":"222","CustName":"Gopal","age":"24","Address":"aravind colony","city":"Warangal","contactNumber":"7708706607","country":"India"}
+
+
+CREATE TABLE customer
+(
+ id character varying(20) NOT NULL,
+  name character varying(255),
+  age numeric,
+  city character varying(50),
+  contactno character varying(255),
+  country character varying(30), CONSTRAINT id_pkey PRIMARY KEY (id)
+ )
+
+
+
+application.properties
+
+server.port=8080
+spring.datasource.platform=postgres
+spring.jpa.show-sql=false
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=tcs#1234
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+{"token":"21369484450486449487454494520542512534516535510534510535516535513539","oldPassword":"password","newPassword":"newpassword"}
+{"username":"krishna","password":""passwd2""}
+{"token":"221325461466463465464470471536519528511532513523517529519529519526511","oldPassword":"password","newPassword":"passwd2"}
+
+
+CustomerBean [CustId=null, CustName=null, age=24, Address=null, contactNumber=null, country=India]
+
+
+CREATE TABLE users
+(
+ username character varying(10) NOT NULL,
+  customerid character varying(10),
+  accounttype character varying(20),
+  balance character varying(20),
+  createddate character varying(20),
+  CONSTRAINT customerasset_pkey PRIMARY KEY (accountid)
+
+CREATE TABLE users
+(
+ username character varying(10) NOT NULL,
+  password character varying(10),
+  status character varying(10), CONSTRAINT username_pkey PRIMARY KEY (username)
+ )
+
+ DELETE from users where username= 'krishna'
+
+
+select customeras0_.accountid as accounti1_0_0_, customeras0_.accounttype as accountt2_0_0_, customeras0_.balance as balance3_0_0_, customeras0_.createddate as createdd4_0_0_, customeras0_.customerid as customer5_0_0_ from customerasset customeras0_ where customeras0_.accountid=?
+
+
+CREATE TABLE users
+(
+ username character varying(10) NOT NULL,
+  password character varying(10),
+  status character varying(10),
+
+  CONSTRAINT username_pkey PRIMARY KEY (username)
+
+
+
+
+public String encryptMessage(String userName) 
+	{
+	
+	String out = "";
+	String rr1 = "";
+	String rr2 = "";
+	long currentTimeplusoffset = 0;
+	
+	int offsetTime;
+	int r1 = 0;
+	int r2 = 0;
+	int sw = -1;
+	int i = 0;
+	
+	try{
+		offsetTime = 30;
+		currentTimeplusoffset = System.currentTimeMillis() + offsetTime * 60 * 1000;
+		userName = userName + "," + currentTimeplusoffset;
+		r1 = 0;
+		r2 = 0;
+		sw = -1;
+		i = 0;
+		rr1 = "";
+		rr2 = "";
+		Random randomGenerator = new Random();
+		r1 = randomGenerator.nextInt(100);
+		r2 = randomGenerator.nextInt(100);
+		for (i=0;i<userName.length();i++)
+		{
+			if (sw==-1)
+			{
+				out = out +(((255 - userName.charAt(i))) + r1 + 300);
+			}
+			else
+			{
+				out = out +(((255 - userName.charAt(i))) + r2 + 300);
+			}
+			sw = sw * -1;
+		}
+		rr1 = r1 + "";
+		rr2 = r2 + "";
+		out = rr1.length() + "" + rr2.length() + rr1 + rr2 + out;
+		randomGenerator = null;
+	}
+	catch(Exception e){
+		System.out.println("Exception :" + e.getMessage());
+	}
+    return out;
+}
+
+
+
+
+
+
+public ArrayList decryptMessage(String encryptedToken)
+	{
+		String inp = encryptedToken;
+		String inpp = "";
+		String out = "";
+		Integer out1 = 0;
+		char out2;
+		int r1 = 0;
+		int r2 = 0;
+		int sw = -1;
+		ArrayList outResult = new ArrayList();
+		try
+		{
+			r1 = Integer.parseInt(inp.charAt(0) + "");
+			r2 = Integer.parseInt(inp.charAt(1) + "");
+			inp = inp.substring(2, inp.length());
+			r1 = Integer.parseInt(inp.substring(0, r1));
+			inp = inp.substring((r1 + "").toString().length(), inp.length());
+			r2 = Integer.parseInt(inp.substring(0, r2));
+			inp = inp.substring((r2 + "").toString().length(), inp.length());
+			inpp = inp;
+			
+			for (int i = 0; i < inpp.length(); i += 3)
+			{
+				out1 = Integer.parseInt(inp.substring(0, 3));
+				out1 = Integer.parseInt(inp.substring(0, 3)) - 300;
+				if(sw == -1)
+				{
+					out1 = out1 - r1;
+				}
+				else
+				{
+					out1 = out1 - r2;
+				}
+				out1 = 255 - out1;
+				out2 = (char) (out1 + 0);
+				out = out + out2;
+				inp = inp.substring(3, inp.length());
+				sw = sw * -1;
+			}
+			String[] s= out.split(",");
+			outResult.add(s[0]);
+			outResult.add(s[1]);
+		}
+	catch(Exception e)
+		{
+			System.out.println("Exception : " + e.getMessage());
+		}
+		return outResult;
+	}
+
+
+Learning urls for learning microservices
+
+https://kafka.apache.org -- transaction management
+https://cloud.spring.io/spring-cloud-stream/
+https://spring.io/guides/gs/service-registration-and-discovery/
+https://spring.io/guides/gs/consuming-rest
+
+org.springframework.cloud
+spring-cloud-starter-eureka-server
+
+
+org.springframework.boot
+spring-boot-starter-test
+
+223181479522481521482526489592537584529587535588530579538579532581529
+
+SLF4J: Class path contains multiple SLF4J bindings. 
+SLF4J: Found binding in [jar:file:/C:/Users/FischerNi/.m2/repository/org/slf4j/slf4j-jdk14/1.5.3/slf4j-jdk14-1.5.3.jar!/org/slf4j/impl/StaticLoggerBinder.class] 
+SLF4J: Found binding in [jar:file:/C:/Users/FischerNi/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class] 
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation. 
+SLF4J: slf4j-api 1.6.x (or later) is incompatible with this binding. 
+SLF4J: Your binding is version 1.5.5 or earlier. 
+SLF4J: Upgrade your binding to version 1.6.x. or 2.0.x Exception in thread "main" java.lang.NoSuchMethodError: org.slf4j.impl.StaticLoggerBinder.getSingleton()Lorg/slf4j/impl/StaticLoggerBinder;
